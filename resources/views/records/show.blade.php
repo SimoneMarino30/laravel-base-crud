@@ -1,8 +1,6 @@
 @extends('layout.app')
 
-@section('page_name')
-show
-@endsection
+@section('page-name', 'Detail')
 
 @section('main_content')
 <ul>

@@ -1,4 +1,4 @@
-Ciao ragazzi,
+DAY 1:
 oggi create un nuovo progetto Laravel 9 per gestire un archivio di brani musicali. Ogni brano dovrà avere (almeno):
 
 -   title
@@ -21,3 +21,10 @@ Milestone 2
 Bonus:
 
 -   creare il seeder per la tabella songs utilizzando Faker. ✔
+
+DAY 2:
+oggi lavorate sulla stessa repo di ieri e completate le rotte:
+
+-   "Create"
+-   "Store"
+-   con annesso FORM.

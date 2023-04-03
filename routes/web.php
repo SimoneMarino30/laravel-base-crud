@@ -19,3 +19,14 @@ use App\Http\Controllers\RecordController;
 Route::get('/', [PageController::class, 'index'])->name('homepage');
 
 Route::resource('records', RecordController::class);
+
+// ! Rotte contenute in Route::resource(controller Record) :
+
+// * Rotta per la lista index
+// Route::get('/records', [PageController::class, 'index'])->name('records.index');
+
+// * Rotta per la dettaglio risorsa show
+// Route::get('/records/{record}', [RecordController::class, 'show'])->name('records.show');
+
+// * Rotta per il form creazione risorsa
+// Route::get('/records/create', [RecordController::class, 'create'])->name('records.create');

@@ -13,10 +13,18 @@ class RecordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(Request $request)
+    {   
+        if($request->has('term')) {
+            // die('user did a search');
+            // * Ricerca di term nella barra search
+            $term = $request->get('term');
+            // * withQueryString() il param ricercato nella ricerca rimane nell'URL --> (?term='xxx') 
+            $records = Record::where('title', 'LIKE', "%$term%")->paginate(20)->withQueryString();
+        } else {
         // $records = Record::all();
-        $records = Record::limit(25)->get();
+        $records = Record::paginate(20);
+        }
         return view('records.index', compact('records'));
     }
 
@@ -27,7 +35,7 @@ class RecordController extends Controller
      */
     public function create()
     {
-        //
+        return view('records.create');
     }
 
     /**
@@ -48,7 +56,9 @@ class RecordController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Record $record)
-    {
+    {   
+        $records = Record::all();
+        $data = $records;
         return view('records.show', compact('record'));
     }
 

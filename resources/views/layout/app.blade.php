@@ -6,18 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ env('APP_NAME')}} - @yield('page-name')</title>
 
-  {{-- Bootstrap Icons --}}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
   {{-- Includiamo gli assets con la direttiva @vite --}}
   @vite('resources/js/app.js')
+
+  @yield('cdn')
 </head>
-<body>
+<body class="bg-body-dark ">
   @include('_partials._navbar')
   <main>
-    <h1>@yield('page_name')</h1>
+    {{-- <h1>@yield('page_name')</h1> --}}
     @yield('main_content')
-    @yield('show')
+    
   </main>
   @include('_partials._footer')
 </body>
