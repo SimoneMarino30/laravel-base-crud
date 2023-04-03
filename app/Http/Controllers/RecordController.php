@@ -46,7 +46,12 @@ class RecordController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $record = new Record;
+        $record->fill($data);
+        $record->save();
+        return redirect()->route('records.show', $record);
     }
 
     /**

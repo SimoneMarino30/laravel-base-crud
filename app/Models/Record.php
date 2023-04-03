@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Record extends Model
 {
     use HasFactory;
+
+    protected $fillable = ["title", "album", "author", "year", "editor", "length", "poster"];
 }

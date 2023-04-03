@@ -8,11 +8,16 @@
 @endsection
 
 @section('main_content')
-<div class="container">
-  <form class="d-flex mb-3" role="search">
+  <div class="row my-3">
+      <form class="d-flex col-8 mb-3" role="search">
         <input class="form-control me-2" name="term" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success my-0" type="submit">Search</button>
       </form>
+      <div class="col-4">
+        <a type="button" href="{{ route('records.create') }}" class="btn btn-outline-success">Create New Record</a>
+      </div>
+  </div>
+  
   <table class="table table-dark table-striped table-hover">
     <thead>
     <tr class="table-success">
@@ -42,5 +47,4 @@
   </tbody>
 </table>
 {{ $records->links('pagination::bootstrap-5') }}
-</div>
 @endsection

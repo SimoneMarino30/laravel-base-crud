@@ -13,7 +13,7 @@
 </head>
 <body class="bg-body-dark ">
   @include('_partials._navbar')
-  <main>
+  <main class="container text">
     {{-- <h1>@yield('page_name')</h1> --}}
     @yield('main_content')
     

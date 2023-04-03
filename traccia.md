@@ -25,6 +25,6 @@ Bonus:
 DAY 2:
 oggi lavorate sulla stessa repo di ieri e completate le rotte:
 
--   "Create"
--   "Store"
--   con annesso FORM.
+-   "Create" ✔
+-   "Store" ✔
+-   con annesso FORM. ✔
