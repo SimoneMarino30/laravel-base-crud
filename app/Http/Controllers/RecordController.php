@@ -84,7 +84,7 @@ class RecordController extends Controller
 
         $record = new Record;
 
-        // * METODO 1: Li riempio a 'mano'
+        // * METODO 1: Li riempio a 'mano' (chiave e valore array sono uguali)
         // $record->title =$data['title'];
         // $record->album =$data['album'];
         // $record->author =$data['author'];
@@ -119,9 +119,9 @@ class RecordController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Record $record)
     {
-        //
+        return view('records.edit', compact('record'));
     }
 
     /**
@@ -131,9 +131,44 @@ class RecordController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Record $record)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:50',
+            'album' => 'required|string|max:50',
+            'author' => 'required|string|max:50',
+            'year' => 'required|integer',
+            'editor' => 'nullable|string',
+            'length' => 'required|string',
+            'poster' => 'nullable|string'
+        ],
+        [
+            'title.required' => 'il titolo è obbligatorio',
+            'title.max' => 'il titolo deve avere al massimo 50 catteri',
+            'title.string' => 'il titolo deve essere una stringa',
+
+            'album.required' => 'l\' album è obbligatorio',
+            'album.max' => 'l\' album deve avere al massimo 50 catteri',
+            'album.string' => 'l\' album deve essere una stringa',
+
+            'author.required' => 'l\' autore è obbligatorio',
+            'author.max' => 'l\' autore deve avere al massimo 30 catteri',
+            'author.string' => 'l\' autore deve essere una stringa',
+
+            'year.required' => 'l\' anno è obbligatorio',
+            'year.integer' => 'l\' anno deve essere un numero',
+
+            'editor.string' => 'l\' editor deve essere una stringa',
+
+            'length.required' => 'la lunghezza è obbligatoria',
+            'length.string' => 'la lunghezza deve essere una stringa',
+
+            'poster.string' => 'il poster deve essere una stringa'
+        ]);
+
+        $data = $request->all();
+        $record->update($data);
+        return redirect()->route('records.show', $record);
     }
 
     /**

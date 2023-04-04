@@ -38,10 +38,12 @@
       <td>{{ $record->length }}</td>
       <td>
         <a href="{{ route('records.show', $record) }}">
-          <i class="bi bi-vinyl-fill"></i>
+          <i class="bi bi-vinyl-fill me-2"></i>
+        </a>
+        <a href="{{ route('records.edit', $record) }}">
+          <i class="bi bi-pencil-fill"></i>
         </a>
       </td>
-      {{-- had set limit on 25 in RecordController --}}
     </tr>
     @endforeach
   </tbody>

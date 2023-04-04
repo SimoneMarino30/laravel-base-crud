@@ -19,10 +19,9 @@ use App\Http\Controllers\RecordController;
 Route::get('/', [PageController::class, 'index'])->name('homepage');
 
 Route::resource('records', RecordController::class);
-
-// ! Rotte contenute in Route::resource 
 // TODO ( php artisan make:controller RecordController --resource ) :
 
+// ! Rotte contenute in Route::resource
 // * Rotta per la lista index
 // Route::get('/records', [PageController::class, 'index'])->name('records.index');
 
