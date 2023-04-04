@@ -19,5 +19,7 @@
     
   </main>
   @include('_partials._footer')
+
+  @yield('modals')
 </body>
 </html>

@@ -41,12 +41,41 @@
           <i class="bi bi-vinyl-fill me-2"></i>
         </a>
         <a href="{{ route('records.edit', $record) }}">
-          <i class="bi bi-pencil-fill"></i>
+          <i class="bi bi-pencil-fill me-2"></i>
         </a>
+        <button class="bi bi-trash3-fill text-danger btn-trash" data-bs-toggle="modal" data-bs-target="#delete"></button>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
+{{-- * PASSAGGIO -{{ $record->id }} NON FUNZIONA * --}}
+
 {{ $records->links('pagination::bootstrap-5') }}
+@endsection
+
+@section('modals')
+<!-- Modal -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header debug">
+        <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Attenzione, il record n° {{ $record->id }} sta per essere eliminato</h1>
+        <button type="button btn-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body debug">
+        Vuoi eliminare definitivamente il record? <br>
+        La risorsa non potrà essere recuperata
+      </div>
+      <div class="modal-footer debug">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+        <form action="{{ route('records.destroy', $record) }}" method="POST">
+          @csrf
+          @method('delete')
+          <button class="bi bi-trash3-fill btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection

@@ -28,3 +28,12 @@ oggi lavorate sulla stessa repo di ieri e completate le rotte:
 -   "Create" ✔
 -   "Store" ✔
 -   con annesso FORM. ✔
+
+DAY 3:
+
+-   oggi lavorate sulla stessa repo di ieri e completate le operazioni CRUD. ✔
+
+Bonus:
+
+-   Validare gli input ricevuti in fase di creazione e modifica, rispondendo con errori chiari e in italiano. ✔
+-   Chiedere conferma di eliminazione record via Modal di BS5 ✔
