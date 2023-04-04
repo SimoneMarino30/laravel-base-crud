@@ -23,7 +23,7 @@ class RecordController extends Controller
             $records = Record::where('title', 'LIKE', "%$term%")->paginate(20)->withQueryString();
         } else {
         // $records = Record::all();
-        $records = Record::paginate(20);
+        $records = Record::paginate(10);
         }
         return view('records.index', compact('records'));
     }
@@ -45,10 +45,56 @@ class RecordController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $request->validate([
+            'title' => 'required|string|max:50',
+            'album' => 'required|string|max:50',
+            'author' => 'required|string|max:50',
+            'year' => 'required|integer',
+            'editor' => 'nullable|string',
+            'length' => 'required|string',
+            'poster' => 'nullable|string'
+        ],
+        [
+            'title.required' => 'il titolo è obbligatorio',
+            'title.max' => 'il titolo deve avere al massimo 50 catteri',
+            'title.string' => 'il titolo deve essere una stringa',
+
+            'album.required' => 'l\' album è obbligatorio',
+            'album.max' => 'l\' album deve avere al massimo 50 catteri',
+            'album.string' => 'l\' album deve essere una stringa',
+
+            'author.required' => 'l\' autore è obbligatorio',
+            'author.max' => 'l\' autore deve avere al massimo 30 catteri',
+            'author.string' => 'l\' autore deve essere una stringa',
+
+            'year.required' => 'l\' anno è obbligatorio',
+            'year.integer' => 'l\' anno deve essere un numero',
+
+            'editor.string' => 'l\' editor deve essere una stringa',
+
+            'length.required' => 'la lunghezza è obbligatoria',
+            'length.string' => 'la lunghezza deve essere una stringa',
+
+            'poster.string' => 'il poster deve essere una stringa'
+        ]);
+
+
         $data = $request->all();
 
         $record = new Record;
+
+        // * METODO 1: Li riempio a 'mano'
+        // $record->title =$data['title'];
+        // $record->album =$data['album'];
+        // $record->author =$data['author'];
+        // $record->year =$data['year'];
+        // $record->editor =$data['editor'];
+        // $record->length =$data['length'];
+        // $record->poster =$data['poster'];
+        
+
+        // * METODO 2: uso il metodo->fill() + [$fillable nel model]
         $record->fill($data);
         $record->save();
         return redirect()->route('records.show', $record);
