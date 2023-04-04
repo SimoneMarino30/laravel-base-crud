@@ -43,7 +43,7 @@
         <a href="{{ route('records.edit', $record) }}">
           <i class="bi bi-pencil-fill me-2"></i>
         </a>
-        <button class="bi bi-trash3-fill text-danger btn-trash" data-bs-toggle="modal" data-bs-target="#delete"></button>
+        <button class="bi bi-trash3-fill text-danger btn-trash" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ $record->id }}"></button>
       </td>
     </tr>
     @endforeach
@@ -55,8 +55,9 @@
 @endsection
 
 @section('modals')
+@foreach ($records as $record)
 <!-- Modal -->
-<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="delete-modal-{{ $record->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header debug">
@@ -68,14 +69,18 @@
         La risorsa non potrà essere recuperata
       </div>
       <div class="modal-footer debug">
+
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+
         <form action="{{ route('records.destroy', $record) }}" method="POST">
           @csrf
           @method('delete')
+          
           <button class="bi bi-trash3-fill btn btn-danger">Delete</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+@endforeach
 @endsection
