@@ -24,6 +24,7 @@
       <th scope="col">ID:</th>
       <th scope="col">Title:</th>
       <th scope="col">Author:</th>
+      <th scope="col">Editor:</th>
       <th scope="col">Year:</th>
       <th scope="col">Length:</th>
       <th scope="col">Actions:</th>
@@ -36,6 +37,7 @@
       <th scope="row">{{ $record->id }}</th>
       <td>{{ $record->title }}</td>
       <td>{{ $record->author }}</td>
+      <td>{{ $record->editor }}</td>
       <td>{{ $record->year }}</td>
       <td>{{ $record->length }}</td>
       <td>
