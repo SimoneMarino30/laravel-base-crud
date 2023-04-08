@@ -1,20 +1,12 @@
-@import "~bootstrap/scss/bootstrap";
+@import "./partials/bootstrap_loader.scss";
 
 .bg-body-dark {
-    background-color: #111;
+    background-color: $custom-dark;
 }
 
 .text {
     color: #fff;
 }
-.jumbotron {
-    min-height: 100vh;
-}
-
-// Colore labels form
-// label {
-//     color: green;
-// }
 
 .btn-trash {
     background-color: transparent;
@@ -23,11 +15,15 @@
     border: none;
 }
 
-.debug {
-    background-color: #2c3034;
-    color: #fff;
+a {
+    text-decoration: none;
 }
 
 .btn-close {
+    color: #fff;
+}
+
+.modal-bg {
+    background-color: $custom-dark;
     color: #fff;
 }
