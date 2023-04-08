@@ -116,6 +116,7 @@ class RecordController extends Controller
     {
         // *Metodo 2 se non uso dipendency injection->(Record $record)
         // $record = Record::findOrFail($id);
+        
         $record->delete();
         return redirect()->route('records.index'); 
     }

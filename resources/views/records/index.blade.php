@@ -24,8 +24,8 @@
       <th scope="col">ID:</th>
       <th scope="col">Title:</th>
       <th scope="col">Author:</th>
-      <th scope="col">Length:</th>
       <th scope="col">Year:</th>
+      <th scope="col">Length:</th>
       <th scope="col">Actions:</th>
     </tr>
   </thead>
