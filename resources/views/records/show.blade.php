@@ -2,6 +2,11 @@
 
 @section('page-name', 'Detail')
 
+@section('cdn')
+{{-- Bootstrap Icons --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+@endsection
+
 @section('main_content')
 {{-- <ul> --}}
 @foreach ($record->getAttributes() as $attr => $value)
