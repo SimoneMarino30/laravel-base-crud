@@ -3,8 +3,8 @@
 @section('page-name', 'Detail')
 
 @section('main_content')
-<ul>
-  @foreach ($record->getAttributes() as $attr => $value)
+{{-- <ul> --}}
+@foreach ($record->getAttributes() as $attr => $value)
   {{-- <li>{{ $attr }} => {{ $value }}</li>
 </ul> --}}
 @endforeach
@@ -40,6 +40,7 @@
   </div>
   <div class="col-4">
     <img src="{{ $record->poster }}" class="img-fluid my-5" alt="img">
+    <br>
     <a href="{{ route('records.index')}}" class="btn btn-success">Back to List</a>
   </div>
 </div>
