@@ -1,11 +1,29 @@
 @import "./partials/bootstrap_loader.scss";
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .bg-body-dark {
     background-color: $custom-dark;
 }
 
+#_nav {
+    background-color: $custom-pagination-green;
+}
+
+#_drop {
+    background-color: $custom-pagination-light-green;
+}
+
 .text {
     color: #fff;
+}
+
+label {
+    color: $custom-pagination-light-green;
 }
 
 .btn-trash {
@@ -26,4 +44,26 @@ a {
 .modal-bg {
     background-color: $custom-dark;
     color: #fff;
+}
+
+#home-vinyl {
+    font-size: 500px;
+}
+
+#home-text {
+    font-size: 50px;
+    color: $custom-pagination-green;
+    width: 650px;
+    height: 150px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+#_foot-img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+footer {
+    margin-top: auto;
 }

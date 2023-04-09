@@ -2,9 +2,14 @@
 
 @section('page-name', 'Edit Record ')
 
+@section('cdn')
+{{-- Bootstrap Icons --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+@endsection
+
 @section('main_content')
 
-<h1 class="my-3">Edit details of record n° {{ $record->id }}:</h1>
+<h1 class="my-3 text-success">Edit details of record n° {{ $record->id }}:</h1>
 
 <form action="{{ route('records.update', $record) }}" method="POST" class="row gy-3">
   {{-- * Invio del form, Token * --}}

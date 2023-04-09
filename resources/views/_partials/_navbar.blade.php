@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light mb-5">
+<nav class="navbar navbar-expand-lg mb-5" id="_nav">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ route('homepage')}}">
     <i class="bi bi-vinyl-fill"></i>
@@ -17,10 +17,10 @@
           data-bs-toggle="dropdown" 
           aria-expanded="false">Records
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ route('records.index') }}">Records List</a></li>
+          <ul class="dropdown-menu" id="_drop">
+            <li><a class="dropdown-item"  href="{{ route('records.index') }}">Records List</a></li>
             {{-- <li><a class="dropdown-item" href="#">Records List</a></li> --}}
-            <li><hr class="dropdown-divider"></li>
+            {{-- <li><hr class="dropdown-divider"></li> --}}
             {{-- <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
           </ul>
         </li>

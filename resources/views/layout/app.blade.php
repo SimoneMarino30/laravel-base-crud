@@ -16,9 +16,11 @@
   <main class="container text">
     {{-- <h1>@yield('page_name')</h1> --}}
     @yield('main_content')
-    
   </main>
-  @include('_partials._footer')
+  <footer class="d-flex justify-content-end">
+    @include('_partials._footer')
+  </footer>
+  
 
   @yield('modals')
 </body>

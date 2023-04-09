@@ -41,7 +41,7 @@
   <div class="col-4">
     <img src="{{ $record->poster }}" class="img-fluid my-5" alt="img">
     <br>
-    <a href="{{ route('records.index')}}" class="btn btn-success">Back to List</a>
+    <a href="{{ route('records.index')}}" class="btn btn-outline-success">Back to List</a>
   </div>
 </div>
 @endsection

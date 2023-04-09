@@ -66,8 +66,8 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header modal-bg">
-        <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Attenzione, il record n° {{ $record->id }} sta per essere eliminato</h1>
-        <a type="button" class="text-success" data-bs-dismiss="modal" aria-label="Close">
+        <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Il record n° {{ $record->id }} sta per essere eliminato</h1>
+        <a type="button" class="text-light" data-bs-dismiss="modal" aria-label="Close">
           <i class="bi bi-x-circle"></i>
         </a>
       </div>
